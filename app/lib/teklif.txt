@@ -1,0 +1,90 @@
+"Full-Stack Web Uygulama Mimarisi" ile "BFF (Backend for Frontend)" yapısı birleştirilecektir.
+Amaç: Dinamik kullanıcı etkileşimlerini hızlı ve ölçeklenebilir bir yapıda sunmak.
+Yapı: Frontend ve backend bileşenleri birbirinden bağımsız olarak çalışır ancak birbirini destekleyecek şekilde entegre edilir.
+
+Sunucu:
+    Barındırma:
+    Frontend: Vercel
+    Backend: Plesk
+Yönetim:
+    Vercel üzerinde Next.js uygulaması SSR ve SSG yetenekleriyle çalışır.
+    Plesk üzerinde Express.js sunucusu bulunur ve RESTful API hizmeti sağlar.
+Veritabanı (DB):
+    Teknoloji: PostgreSQL
+    Barındırma: Plesk üzerinde veritabanı yönetimi
+    Özellikler:
+        İlişkisel veri yapısı
+        Performanslı sorgulama
+        Ölçeklenebilir yapı
+    Kullanım:
+        Kullanıcı verileri ve işlemler PostgreSQL'de depolanır.
+        API aracılığıyla veritabanı işlemleri yapılır.
+        Next.js üzerinden doğrudan veritabanı işlemleri yapılabilir.
+
+Frontend:
+    Teknoloji: Next.js
+    Barındırma: Vercel veya Plesk
+    Özellikler:
+        Sunucu Taraflı İşleme (SSR): Kullanıcıya hızlı sayfa yükleme ve dinamik içerik sağlama.
+        İstemci Taraflı İşleme (CSR): Kullanıcı etkileşimlerini optimize etme.
+        Statik Sayfa Üretimi (SSG): Önceden oluşturulmuş sayfalarla hızlı yanıt süreleri.
+        Global API Kullanımı: Harici veri kaynaklarından veri çekme (örneğin, harita servisleri, hava durumu API'leri).
+    UI Kütüphanesi: Shadcn
+        Kullanıcı dostu, estetik ve modern bileşenler
+    Durum Yönetimi: Zustand
+        Global state yönetimi ve local storage kullanımı
+        Kullanıcı oturumları ve geçici veriler için ideal
+
+Backend:
+    Teknoloji: Express.js
+    Barındırma: Plesk
+    API Yapısı: RESTful API
+    Özellikler:
+        Kullanıcı işlemleri ve veritabanı bağlantıları
+        Otomasyon ve iş mantığını yönetme
+        Harici API verilerini almak ve frontend'e sağlamak
+    Veritabanı Yönetimi:
+        PostgreSQL veritabanına bağlantı
+        CRUD işlemlerini yönetme
+İletişim Yapısı:
+    Frontend (Next.js):
+        Kullanıcı isteği oluşturur (form gönderme, veri görüntüleme).
+        Veriyi doğrudan PostgreSQL'e kaydedebilir veya Express API üzerinden işlem yapar.
+        Harici API'lerden veri çekebilir.
+
+    Backend (Express.js):
+        Next.js tarafından gelen talepleri işler.
+        Veritabanı bağlantısını sağlar.
+        İhtiyaç halinde harici API verilerini toplar ve Next.js'e geri döner.
+    Veritabanı (PostgreSQL):
+        Veriler merkezi olarak depolanır ve işlenir.
+        Doğrudan Next.js üzerinden ya da Express API aracılığıyla erişim sağlanır.
+Kullanım Senaryoları:
+        Dinamik Sayfa Yükleme:
+            Kullanıcı tarayıcıda sayfayı açtığında Next.js sunucu üzerinden veri çeker ve sayfayı oluşturur (SSR).
+        Form Gönderme:
+            Next.js formdan gelen veriyi doğrudan PostgreSQL'e kaydeder veya Express API'ye gönderir.
+        Harici Veri Çekme:
+            Next.js, global API'lerden veri alır ve sayfa bileşenlerinde gösterir.
+            Express.js, belirli işlemler için harici API'lerden veri toplar ve frontend'e iletir.
+
+Avantajlar:
+    Yüksek Performans: 
+        SSR ve SSG ile hızlı sayfa yüklemesi.
+    Modülerlik:
+        Backend ve frontend bileşenleri ayrı yönetilebilir.
+    Esneklik:
+        Frontend doğrudan veritabanına bağlanabilir veya API üzerinden veri alabilir.
+    Kullanıcı Deneyimi:
+        Shadcn bileşenleri ile estetik ve kullanıcı dostu arayüz.
+    Veri Yönetimi:
+        Zustand ile hızlı ve etkili local state yönetimi.
+
+Bu yapı, kullanıcı dostu, hızlı ve ölçeklenebilir bir çözüm sunar. Hem frontend hem de backend bileşenlerinin bağımsız çalışabilmesi, gerektiğinde doğrudan veritabanına veya harici kaynaklara erişim sağlaması projeyi esnek hale getirir.
+
+
+
+
+
+
+
